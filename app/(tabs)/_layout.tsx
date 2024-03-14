@@ -30,7 +30,7 @@ export default function TabLayout() {
 			<Tabs.Screen
 				name="index"
 				options={{
-					title: "Demo",
+					title: "Todo",
 					tabBarIcon: ({ color }) => (
 						<TabBarIcon name="tasks" color={color} />
 					),

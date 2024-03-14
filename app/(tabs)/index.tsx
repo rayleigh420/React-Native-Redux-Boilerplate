@@ -1,12 +1,16 @@
-import { StyleSheet } from "react-native";
+import { Button, StyleSheet } from "react-native";
 
 import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { increment } from "@/features/todo/todoSlice";
+import TodoInput from "@/components/todos/todoInput";
+import TodoList from "@/components/todos/todoList";
 
 export default function TabOneScreen() {
 	const count = useSelector((state: RootState) => state.counter.value);
+	const dispatch = useDispatch();
 
 	return (
 		// <View style={styles.container}>
@@ -14,7 +18,10 @@ export default function TabOneScreen() {
 		//   <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
 		//   <EditScreenInfo path="app/(tabs)/index.tsx" />
 		// </View>
-		<Text>{count}</Text>
+		<View>
+			<TodoList />
+			<TodoInput />
+		</View>
 	);
 }
 

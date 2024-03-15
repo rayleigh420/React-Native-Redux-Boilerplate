@@ -1,12 +1,17 @@
-import { Button, StyleSheet } from "react-native";
+import {
+	Button,
+	KeyboardAvoidingView,
+	Platform,
+	StyleSheet,
+} from "react-native";
 
 import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { increment } from "@/features/todo/todoSlice";
-import TodoInput from "@/components/todos/todoInput";
-import TodoList from "@/components/todos/todoList";
+import TodoList from "@/components/todos/TodoList";
+import TodoInput from "@/components/todos/TodoInput";
 
 export default function TabOneScreen() {
 	const count = useSelector((state: RootState) => state.counter.value);
@@ -18,10 +23,19 @@ export default function TabOneScreen() {
 		//   <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
 		//   <EditScreenInfo path="app/(tabs)/index.tsx" />
 		// </View>
-		<View>
-			<TodoList />
-			<TodoInput />
-		</View>
+		<KeyboardAvoidingView style={{ flex: 1 }}>
+			<View
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "space-between",
+					minHeight: "100%",
+				}}
+			>
+				<TodoList />
+				<TodoInput />
+			</View>
+		</KeyboardAvoidingView>
 	);
 }
 

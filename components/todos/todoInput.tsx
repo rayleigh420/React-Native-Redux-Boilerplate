@@ -1,11 +1,19 @@
+import { add } from "@/features/todo/todoSlice";
 import React, { useState } from "react";
-import { View, TextInput, StyleSheet, Button } from "react-native";
+import { View, TextInput, StyleSheet, Button, Keyboard } from "react-native";
+import { useDispatch } from "react-redux";
 
 export default function TodoInput() {
+	const dispatch = useDispatch();
+
 	const [input, setInput] = useState("");
 
 	const handleAddTodo = () => {
-		// Handle the addition of the todo
+		if (input) {
+			dispatch(add({ id: Math.random().toString(), text: input }));
+			setInput("");
+			Keyboard.dismiss();
+		}
 	};
 
 	return (

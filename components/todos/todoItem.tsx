@@ -17,13 +17,14 @@ export default function TodoItem({ item }: { item: todo }) {
 	};
 
 	const handleUpdateTodo = () => {
+		console.log('1')
 		setEdit(true);
 	};
 
-	const handleBlur = () => {
-		setEdit(false);
-		setEditText(item.text);
-	};
+	// const handleBlur = () => {
+	// 	setEditText(item.text);
+	// 	setEdit(false);
+	// };
 
 	const handleSubmitEdit = () => {
 		console.log("Edit");
@@ -31,7 +32,7 @@ export default function TodoItem({ item }: { item: todo }) {
 			console.log(editText);
 			dispatch(update({ id: item.id, text: editText }));
 			setEdit(false);
-			setEditText(item.text);
+			// setEditText(item.text);
 		}
 	};
 
@@ -49,7 +50,7 @@ export default function TodoItem({ item }: { item: todo }) {
 					ref={inputRef}
 					value={editText}
 					onChangeText={setEditText}
-					onBlur={handleBlur}
+					// onBlur={handleBlur}
 				/>
 			) : (
 				<Text>{item.text}</Text>

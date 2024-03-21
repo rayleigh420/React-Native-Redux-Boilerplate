@@ -9,7 +9,7 @@ import {
 	StyleSheet,
 	TouchableOpacity,
 } from "react-native";
-import TodoItem from "./TodoItem";
+import TodoItem from "./todoItem";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 

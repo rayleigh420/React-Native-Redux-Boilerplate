@@ -1,7 +1,5 @@
 import {
-	Button,
 	KeyboardAvoidingView,
-	Platform,
 	StyleSheet,
 } from "react-native";
 
@@ -9,12 +7,11 @@ import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { increment } from "@/features/todo/todoSlice";
-import TodoList from "@/components/todos/TodoList";
-import TodoInput from "@/components/todos/TodoInput";
+import TodoList from "@/components/todos/todoList";
+import TodoInput from "@/components/todos/todoInput";
 
 export default function TabOneScreen() {
-	const count = useSelector((state: RootState) => state.counter.value);
+	const count = useSelector((state: RootState) => state.counter);
 	const dispatch = useDispatch();
 
 	return (

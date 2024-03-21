@@ -11,7 +11,7 @@ import TodoList from "@/components/todos/todoList";
 import TodoInput from "@/components/todos/todoInput";
 
 export default function TabOneScreen() {
-	const count = useSelector((state: RootState) => state.counter);
+	const count = useSelector((state: RootState) => state.todo);
 	const dispatch = useDispatch();
 
 	return (

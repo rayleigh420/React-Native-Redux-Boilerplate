@@ -14,7 +14,7 @@ const initialState: CounterState = {
   ],
 };
 
-export const counterSlice = createSlice({
+export const todoSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
@@ -34,6 +34,6 @@ export const counterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { add, update, remove } = counterSlice.actions;
+export const { add, update, remove } = todoSlice.actions;
 
-export default counterSlice.reducer;
+export default todoSlice.reducer;

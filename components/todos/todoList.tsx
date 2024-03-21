@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 
 export default function TodoList() {
-	const todos = useSelector((state: RootState) => state.counter.todos);
+	const todos = useSelector((state: RootState) => state.todo.todos);
 	const renderItem = ({ item }: { item: todo }) => <TodoItem item={item} />;
 
 	return (

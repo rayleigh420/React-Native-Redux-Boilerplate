@@ -2,11 +2,11 @@ import { todo } from "@/types/todo";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export interface CounterState {
+export interface TodoState {
   todos: todo[];
 }
 
-const initialState: CounterState = {
+const initialState: TodoState = {
   todos: [
     { id: "1", text: "Learn React Native" },
     { id: "2", text: "Work on Todo App" },
@@ -15,7 +15,7 @@ const initialState: CounterState = {
 };
 
 export const todoSlice = createSlice({
-  name: "counter",
+  name: "todo",
   initialState,
   reducers: {
     add: (state, action: PayloadAction<todo>) => {
